@@ -25,13 +25,14 @@ mongoose.connection.on("error", (err) => {
 app.get('/', (req, res) => {
     res.send("hello world");
 });
-
+app.use(express.json()); 
 const registerroute = require('./routes/register');
 const loginRoute = require('./routes/login');
+const productRoutes = require('./routes/cart'); 
 
 app.use('/register', registerroute);
 app.use('/login', loginRoute); 
-
+app.use('/api/products', productRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

@@ -8,7 +8,7 @@ const JWT_SECRET = 'krushnawaghumbare'; // Replace with your JWT secret key
 router.post('/', async (req, res) => {
     const { phone, password } = req.body;  // Changed phone to phone
 
-    console.log(req.body);
+    // console.log(req.body);
 
     try {
 
